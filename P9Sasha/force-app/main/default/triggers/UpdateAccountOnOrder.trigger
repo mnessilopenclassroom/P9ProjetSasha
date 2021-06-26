@@ -12,5 +12,6 @@ trigger UpdateAccountOnOrder on Order (after insert, after update, after delete,
             accountIds.add(ord.AccountId);
         }
     }
-    update [SELECT Id FROM Account WHERE Id IN :accountIds];
+    DmlOnOrder doo = new DmlOnOrder();
+    doo.ExecuteDml(accountIds);
 }

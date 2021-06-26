@@ -3,7 +3,7 @@ public class UpdateAccountCATest {
     
     @TestSetup
     Static void testData(){
-        Account acc = TestDataFactory.createOrdersForOneAccount(100);
+        Account acc = TestDataFactory.createOrdersForOneAccount(200);
 
         Test.startTest();
 
@@ -29,7 +29,7 @@ public class UpdateAccountCATest {
     
         acc = [SELECT Id, Chiffre_d_affaire__c From Account LIMIT 1];
         
-        System.assertEquals(10000, acc.Chiffre_d_affaire__c);
+        System.assertEquals(20000, acc.Chiffre_d_affaire__c);
         
     }
 }
